@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1>Programming Assignment 3 - Transformations</h1>
+
+<!-- The graphics canvas -->
+<canvas id="gl-canvas" width="960" height="540" style="border: 1px solid black;">
+    Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+<!-- The shader program -->
+<script id="vertex-shader" type="x-shader/x-vertex">#version 300 es
+layout(location=0) in vec4 vPosition;
+
+uniform mat4 uModel;  // Object to world
+uniform mat4 uView;   // World to camera
+uniform mat4 uProj;   // Projection matrix
+
+void main() {
+    // Convert position to clip coordinates
+    gl_Position = uProj * uView * uModel * vPosition;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">#version 300 es
+precision mediump float;
+
+out vec4 fragColor;
+uniform vec3 uColor;
+
+void main() {
+    fragColor = vec4(uColor,1);
+}
+</script>
+
+<!-- Load Javascript files at the end of the body. -->
+<script type="text/javascript" src="lib/gl-matrix-min.js"></script>
+<script type="text/javascript" src="lib/412-utils.js"></script>
+<script type="text/javascript" src="lib/webgl-utils.js"></script>
+<script type="text/javascript" src="lib/geom/triangle-mesh.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/grid.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/axes.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/cube.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/cone.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/disk.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/cylinder.js"></script>
+<script type="text/javascript" src="lib/geom/shapes/helicopter.js"></script>
+<script type="text/javascript" src="lib/geom/shapes.js"></script>
+<script type="text/javascript" src="pa3.js"></script>
+
+</body>
+</html>
