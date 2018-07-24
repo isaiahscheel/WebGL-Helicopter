@@ -20,7 +20,7 @@ Make sure your computer can run WebGL. Visit [this](https://cs.plu.edu/courses/c
 
 ## Demo
 
-
+<img src = "https://github.com/Isaiaher/WebGL-Helicopter/blob/master/demo.gif" />
 
 
 ## Authors
