@@ -25,7 +25,7 @@ Make sure your computer can run WebGL. Visit [this](https://cs.plu.edu/courses/c
 
 ## Authors
 
-* **Isaiah Scheel** - [Isaiaher](https://github.com/Isaiaher)
+* **Isaiah Scheel** - [Isaiaher](https://github.com/Isaiahscheel)
 
 ## License
 
